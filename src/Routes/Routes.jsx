@@ -4,6 +4,7 @@ import Home from "../Pages/Home/Home/Home";
 import RecipeCategory from "../Pages/Home/RecipeCategory/RecipeCategory";
 import ChefsLayout from "../Layouts/ChefsLayout";
 import Chefs from "../Pages/Chefs/Chefs/Chefs";
+import ChefDetais from "../Pages/Chefs/ChefDetails/ChefDetais";
 
 const router = createBrowserRouter([
   {
@@ -17,12 +18,12 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "chefs",
+    path: "/chefs",
     element: <ChefsLayout></ChefsLayout>,
     children: [
       {
         path: "/chefs/:id",
-        element: <Chefs></Chefs>,
+        element: <ChefDetais></ChefDetais>,
       },
     ],
   },

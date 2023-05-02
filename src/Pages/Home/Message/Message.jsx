@@ -14,11 +14,15 @@ const Message = () => {
         height: "500px",
       }}
     >
-      <div className="banner-text">
-        <h2 className="banner-heading">Choose from thousands of recipes</h2>
+      <div className="section-text">
+        <p>Message From Founder</p>
+        <h2 className="section-heading">
+          First, we eat. Then, we do everything else.
+        </h2>
         <p>
-          Appropriately integrate technically sound value with scalable
-          infomediaries negotiate sustainable strategic theme areas
+          Consectetur quisque per vel ac aptent praesent convallis aliquam
+          montes. Lectus sit inceptos dis dui mattis ad morbi leo luctus duis.
+          Mauris neque dictumst letius consequat senectus potenti ad.
         </p>
         <Button variant="primary">See All Recipe</Button>
       </div>
