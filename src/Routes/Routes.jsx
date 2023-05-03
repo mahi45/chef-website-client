@@ -1,9 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layouts/Main";
 import Home from "../Pages/Home/Home/Home";
-import RecipeCategory from "../Pages/Home/RecipeCategory/RecipeCategory";
 import ChefsLayout from "../Layouts/ChefsLayout";
-import Chefs from "../Pages/Chefs/Chefs/Chefs";
 import ChefDetais from "../Pages/Chefs/ChefDetails/ChefDetais";
 
 const router = createBrowserRouter([
@@ -22,8 +20,10 @@ const router = createBrowserRouter([
     element: <ChefsLayout></ChefsLayout>,
     children: [
       {
-        path: "/chefs/:id",
+        path: ":id",
         element: <ChefDetais></ChefDetais>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/chefs/${params.id}`),
       },
     ],
   },

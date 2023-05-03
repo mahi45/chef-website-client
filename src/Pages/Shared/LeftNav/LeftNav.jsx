@@ -5,7 +5,7 @@ const LeftNav = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/recipe_categories")
+    fetch("http://localhost:5000/recipes")
       .then((res) => res.json())
       .then((data) => setCategories(data))
       .catch((error) => {
@@ -19,7 +19,7 @@ const LeftNav = () => {
         {categories.map((category) => (
           <p key={category.id}>
             <Link
-              to={`recipe_category/${category.id}`}
+              to={`recipe/${category.id}`}
               className="text-decoration-none text-black"
             >
               {category.name}

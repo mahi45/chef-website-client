@@ -20,7 +20,7 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:5000/recipe_categories")
+    fetch("http://localhost:5000/recipes")
       .then((res) => res.json())
       .then((data) => setCategories(data))
       .catch((error) => {
