@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { FaUserCircle } from "react-icons/fa";
-import { Link, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProvider";
 
 const Header = () => {
@@ -49,12 +49,12 @@ const Header = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mx-auto">
-              <Link className="menuClass" to="/home">
+              <NavLink className="menuClass" to="/home">
                 Home
-              </Link>
-              <Link className="menuClass" to="/blog">
+              </NavLink>
+              <NavLink className="menuClass" to="/blog">
                 Blog
-              </Link>
+              </NavLink>
             </Nav>
             <Nav className="align-items-center">
               {/* <Nav.Link>{displayName}</Nav.Link> */}

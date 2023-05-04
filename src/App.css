@@ -31,3 +31,6 @@
 .icon {
   width: 15%;
 }
+.active {
+  color: rgb(2, 210, 148);
+}
