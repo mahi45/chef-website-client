@@ -11,7 +11,7 @@ const Home = () => {
   const [showAllCat, setShowAllCat] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:5000/chefs")
+    fetch("https://assignment10-server-mahi45.vercel.app/chefs")
       .then((res) => res.json())
       .then((data) => setChefs(data))
       .catch((error) => {
@@ -20,7 +20,7 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:5000/recipes")
+    fetch("https://assignment10-server-mahi45.vercel.app/recipes")
       .then((res) => res.json())
       .then((data) => setCategories(data))
       .catch((error) => {
