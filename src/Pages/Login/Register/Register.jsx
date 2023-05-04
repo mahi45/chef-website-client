@@ -6,6 +6,7 @@ import { AuthContext } from "../../../Providers/AuthProvider";
 const Register = () => {
   const { createUser } = useContext(AuthContext);
   const [accepted, setAccepted] = useState(false);
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleRegister = (event) => {
@@ -20,10 +21,11 @@ const Register = () => {
       .then((result) => {
         const createdUser = result.user;
         console.log(createdUser);
+        setError("");
         navigate("/login");
       })
       .catch((error) => {
-        console.log(error);
+        setError(error.message);
       });
   };
 
@@ -96,6 +98,7 @@ const Register = () => {
         <Form.Text className="text-success"></Form.Text>
         <Form.Text className="text-danger"></Form.Text>
       </Form>
+      <p className="text-danger">{error}</p>
     </Container>
   );
 };

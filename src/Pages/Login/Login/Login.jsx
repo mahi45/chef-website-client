@@ -1,10 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../../Providers/AuthProvider";
 
 const Login = () => {
+  const [loginError, setLoginError] = useState("");
   const { signIn, signInWithGoogle, signInWithGithub } =
     useContext(AuthContext);
   const navigate = useNavigate();
@@ -20,12 +21,13 @@ const Login = () => {
     signIn(email, password)
       .then((result) => {
         const loggedUser = result.user;
+        //   const loggedEmail = result.email;
         console.log(loggedUser);
         form.reset();
         navigate(from, { replace: true });
       })
       .catch((error) => {
-        console.log(error);
+        setLoginError(error.message);
       });
   };
 
@@ -100,6 +102,7 @@ const Login = () => {
           <FaGithub></FaGithub> Login with Github
         </Button>
       </div>
+      <p className="text-danger">{loginError}</p>
     </Container>
   );
 };
