@@ -3,7 +3,6 @@ import Chefs from "../../Chefs/Chefs/Chefs";
 import { Button, Col, Row } from "react-bootstrap";
 import RecipeCategory from "../RecipeCategory/RecipeCategory";
 import Message from "../Message/Message";
-import LazyLoad from "react-lazy-load";
 
 const Home = () => {
   const [chefs, setChefs] = useState([]);
@@ -32,7 +31,6 @@ const Home = () => {
   return (
     <div>
       <h2 className="pt-3 pb-2 border-bottom">Chefs List</h2>
-
       <Row className="mt-4">
         {chefs.slice(0, showAllChef ? 9 : 6).map((chef) => (
           <Col xs={12} md={6} lg={4}>

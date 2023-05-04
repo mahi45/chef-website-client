@@ -47,8 +47,8 @@ const Header = () => {
         <Container>
           <Navbar.Brand href="/home">Star Chef</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="mx-auto">
+          <Navbar.Collapse id="responsive-navbar-nav" className="menubar">
+            <Nav className="mx-auto menu">
               <NavLink className="menuClass" to="/home">
                 Home
               </NavLink>
@@ -56,7 +56,7 @@ const Header = () => {
                 Blog
               </NavLink>
             </Nav>
-            <Nav className="align-items-center">
+            <Nav className="align-items-center profile">
               {/* <Nav.Link>{displayName}</Nav.Link> */}
               {user && (
                 <>

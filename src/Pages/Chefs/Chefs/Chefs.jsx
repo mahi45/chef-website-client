@@ -16,7 +16,7 @@ const Chefs = ({ chef }) => {
     <div>
       <Card className="mb-4">
         <Card.Img variant="top" src={chef_image} style={{ height: "400px" }} />
-        <Card.Body>
+        <Card.Body className="chefs-content">
           <Card.Title>{chef_name}</Card.Title>
           <Card.Text>
             <p>Years of Experience: {years_of_experience}</p>

@@ -5,7 +5,7 @@ const RecipeCategory = ({ category }) => {
   const { name, recipe_image } = category;
   return (
     <div>
-      <div className="d-flex align-items-center">
+      <div className="d-flex align-items-center justify-content-center">
         <Card
           className="rounded-circle shadow-lg mb-4"
           style={{ width: "300px", height: "300px", overflow: "hidden" }}

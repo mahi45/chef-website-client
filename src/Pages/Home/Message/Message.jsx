@@ -4,16 +4,7 @@ import { Button, Container } from "react-bootstrap";
 
 const Message = () => {
   return (
-    <Container
-      style={{
-        backgroundImage: `url(${sectionImg})`,
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "top center",
-        width: "100%",
-        height: "500px",
-      }}
-    >
+    <Container className="message-background">
       <div className="section-text">
         <p>Message From Founder</p>
         <h2 className="section-heading">
