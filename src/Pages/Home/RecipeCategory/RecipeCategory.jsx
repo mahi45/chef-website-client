@@ -17,8 +17,7 @@ const RecipeCategory = ({ category }) => {
               backgroundColor: "rgba(0,0,0,0.5)",
             }}
           >
-            <h3 className="text-light">{name}</h3>
-            <p className="text-light">Some description text</p>
+            <h5 className="text-light">{name}</h5>
           </Card.Body>
         </Card>
       </div>

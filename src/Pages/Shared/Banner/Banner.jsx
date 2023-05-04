@@ -1,5 +1,4 @@
 import React from "react";
-import BannerImg from "../../../assets/BannerImage.jpg";
 import { Button } from "react-bootstrap";
 
 const Banner = () => {

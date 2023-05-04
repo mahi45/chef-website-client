@@ -1,6 +1,6 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
-import { Card, Col, Row, Container } from "react-bootstrap";
+import { Col, Row, Container } from "react-bootstrap";
 
 const ChefDetais = () => {
   const chefs = useLoaderData();

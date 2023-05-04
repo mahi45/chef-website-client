@@ -30,6 +30,7 @@ const Home = () => {
 
   return (
     <div>
+      {/* Chef Section Started */}
       <h2 className="pt-3 pb-2 border-bottom">Chefs List</h2>
       <Row className="mt-4">
         {chefs.slice(0, showAllChef ? 9 : 6).map((chef) => (
@@ -47,6 +48,7 @@ const Home = () => {
           Show All Chefs
         </Button>
       </div>
+      {/* Chef section end */}
       {/* Popular Recipe category section Start */}
       <h2 className="pt-3 pb-2 border-bottom">Popular Categories</h2>
       <Row className="mt-4">
@@ -79,7 +81,9 @@ const Home = () => {
         </Button>
       </div>
       {/* Popular Recipe category section End */}
+      {/* Message Section Start */}
       <Message></Message>
+      {/* Message Section Start */}
     </div>
   );
 };

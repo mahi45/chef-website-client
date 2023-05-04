@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
-import { FaUserCircle } from "react-icons/fa";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProvider";
 
@@ -8,16 +7,6 @@ const Header = () => {
   const { user, logOut } = useContext(AuthContext);
   const loc = useLocation();
   const [title, setTittle] = useState("");
-
-  // const [currentUser, setCurrentUser] = useState(null);
-
-  // useEffect((user) => {
-  //   if (user) {
-  //     setCurrentUser(cuser.displayName);
-  //   } else {
-  //     setCurrentUser(null);
-  //   }
-  // }, []);
 
   useEffect(() => {
     if (loc.pathname === "/") {
@@ -57,7 +46,6 @@ const Header = () => {
               </NavLink>
             </Nav>
             <Nav className="align-items-center profile">
-              {/* <Nav.Link>{displayName}</Nav.Link> */}
               {user && (
                 <>
                   <img
@@ -67,7 +55,6 @@ const Header = () => {
                     className="rounded-circle"
                     title={user.displayName ? user.displayName : null}
                   />
-                  {/* <FaUserCircle style={{ fontSize: "2rem" }}></FaUserCircle> */}
                 </>
               )}
               {user ? (

@@ -1,5 +1,4 @@
 import React from "react";
-import sectionImg from "../../../assets/section_bg_image.jpg";
 import { Button, Container } from "react-bootstrap";
 
 const Message = () => {
