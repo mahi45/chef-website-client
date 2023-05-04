@@ -1,13 +1,33 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../Providers/AuthProvider";
 
 const Register = () => {
+  const { createUser } = useContext(AuthContext);
+
+  const handleRegister = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const photo = form.photo.value;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    createUser(email, password)
+      .then((result) => {
+        const createdUser = result.user;
+        console.log(createdUser);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <Container className="mx-auto w-50 border ps-4 pe-4 pb-4 mt-4">
       <h3 className="form-header">Register your account</h3>
-      <Form className="myForm">
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+      <Form onSubmit={handleRegister} className="myForm">
+        <Form.Group className="mb-3" controlId="formBasicName">
           <Form.Label>Your Name</Form.Label>
           <Form.Control
             type="text"
@@ -16,7 +36,7 @@ const Register = () => {
             required
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Group className="mb-3" controlId="formBasicPhoto">
           <Form.Label>Photo URL</Form.Label>
           <Form.Control
             type="text"
@@ -39,7 +59,7 @@ const Register = () => {
           <Form.Label>Password</Form.Label>
           <Form.Control
             type="password"
-            name="email"
+            name="password"
             placeholder="Password"
             required
           />
