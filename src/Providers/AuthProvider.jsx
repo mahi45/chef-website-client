@@ -26,6 +26,9 @@ const AuthProvider = ({ children }) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
+  //   const cuser = auth.currentUser;
+  //   console.log("Current User:", cuser);
+
   const signIn = (email, password) => {
     setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
@@ -64,6 +67,7 @@ const AuthProvider = ({ children }) => {
     signInWithGithub,
     logOut,
   };
+
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
   );

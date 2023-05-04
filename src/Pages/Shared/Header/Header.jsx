@@ -9,6 +9,16 @@ const Header = () => {
   const loc = useLocation();
   const [title, setTittle] = useState("");
 
+  // const [currentUser, setCurrentUser] = useState(null);
+
+  // useEffect((user) => {
+  //   if (user) {
+  //     setCurrentUser(cuser.displayName);
+  //   } else {
+  //     setCurrentUser(null);
+  //   }
+  // }, []);
+
   useEffect(() => {
     if (loc.pathname === "/") {
       document.title = `Star Chef`;
@@ -47,9 +57,18 @@ const Header = () => {
               </Link>
             </Nav>
             <Nav className="align-items-center">
-              {/* <Nav.Link>{user.displayName}</Nav.Link> */}
+              {/* <Nav.Link>{displayName}</Nav.Link> */}
               {user && (
-                <FaUserCircle style={{ fontSize: "2rem" }}></FaUserCircle>
+                <>
+                  <img
+                    src={user.photoURL}
+                    alt=""
+                    style={{ width: "2rem", marginRight: "8px" }}
+                    className="rounded-circle"
+                    title={user.displayName ? user.displayName : null}
+                  />
+                  {/* <FaUserCircle style={{ fontSize: "2rem" }}></FaUserCircle> */}
+                </>
               )}
               {user ? (
                 <Button onClick={handleLogout} variant="secondary">
