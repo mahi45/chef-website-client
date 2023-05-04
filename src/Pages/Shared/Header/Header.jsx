@@ -5,7 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProvider";
 
 const Header = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
   const loc = useLocation();
   const [title, setTittle] = useState("");
 
@@ -22,6 +22,14 @@ const Header = () => {
       setTittle(document.title);
     }
   }, [loc.pathname]);
+
+  const handleLogout = () => {
+    logOut()
+      .then()
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   return (
     <div>
@@ -44,7 +52,9 @@ const Header = () => {
                 <FaUserCircle style={{ fontSize: "2rem" }}></FaUserCircle>
               )}
               {user ? (
-                <Button variant="secondary">Logout</Button>
+                <Button onClick={handleLogout} variant="secondary">
+                  Logout
+                </Button>
               ) : (
                 <Link to="/login">
                   <Button variant="secondary">Login</Button>
