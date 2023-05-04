@@ -35,7 +35,7 @@
   color: rgb(2, 210, 148);
 }
 .message-background {
-  background-image: url("../src/assets/section_bg_image.jpg");
+  background-image: url("https://i.ibb.co/FJm9dnT/section-bg-image.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
@@ -43,7 +43,7 @@
   height: 500px;
 }
 .banner-image {
-  background-image: url("./assets/BannerImage.jpg");
+  background-image: url("https://i.ibb.co/rk3ts2K/Banner-Image.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
