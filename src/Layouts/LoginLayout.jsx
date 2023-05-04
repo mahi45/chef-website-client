@@ -1,13 +1,16 @@
 import React from "react";
 import Header from "../Pages/Shared/Header/Header";
 import { Outlet } from "react-router-dom";
+import { Container } from "react-bootstrap";
+import Footer from "../Pages/Shared/Footer/Footer";
 
 const LoginLayout = () => {
   return (
-    <div>
+    <Container>
       <Header></Header>
       <Outlet></Outlet>
-    </div>
+      <Footer></Footer>
+    </Container>
   );
 };
 

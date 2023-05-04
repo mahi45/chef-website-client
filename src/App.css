@@ -14,3 +14,11 @@
 .section-heading {
   font-size: 40px;
 }
+.form-header {
+  border-bottom: 1px solid #ddd;
+  padding: 25px 0;
+  text-align: center;
+}
+.myForm {
+  padding: 25px 0 0 0;
+}
