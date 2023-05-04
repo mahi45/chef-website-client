@@ -5,7 +5,7 @@ import { FaGithub, FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../../Providers/AuthProvider";
 
 const Login = () => {
-  const { signIn } = useContext(AuthContext);
+  const { signIn, signInWithGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/home";
@@ -21,6 +21,18 @@ const Login = () => {
         const loggedUser = result.user;
         console.log(loggedUser);
         form.reset();
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const handleGoogleSignIn = () => {
+    signInWithGoogle()
+      .then((result) => {
+        const loggedInUser = result.user;
+        console.log(loggedInUser);
         navigate(from, { replace: true });
       })
       .catch((error) => {
@@ -63,7 +75,11 @@ const Login = () => {
       </Form>
 
       <div className="text-center mt-4 mb-3">
-        <Button className="me-2" variant="outline-primary">
+        <Button
+          onClick={handleGoogleSignIn}
+          className="me-2"
+          variant="outline-primary"
+        >
           <FaGoogle />
           Login with Google
         </Button>
